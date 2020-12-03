@@ -1,5 +1,5 @@
 /*
- * DAY 1
+ * DAY 1 (I)
  * 
  * Find the two entries that sum to 2020 and then multiply those two numbers together.
  */
@@ -259,3 +259,29 @@ let result = entriesArr.map(function(val1) {
         }
     })
 })
+
+
+
+/*
+ * DAY 1 (II)
+ * 
+ * Find the three entries that sum to 2020 and then multiply those three numbers together.
+ */
+
+// Find three numbers that sum to 2020
+let int3;
+
+entriesArr.forEach(valueX => {
+    entriesArr.forEach(valueY => {
+        entriesArr.forEach(valueZ => {
+            if (valueX !== valueY !== valueZ && (valueX + valueY + valueZ) === target) {
+                int1 = valueX;
+                int2 = valueY;
+                int3 = valueZ;
+            }
+        })
+    })
+});
+
+// Multiply those three numbers
+console.log(int1 * int2 * int3);
